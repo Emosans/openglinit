@@ -2,7 +2,45 @@
 #include "../dependencies/include/glfw3.h"
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
 using namespace std;
+
+// struct for shader
+struct ShaderProgramSource {
+    string VertexShaderSource;
+    string FragmentShaderSource;
+};
+
+// read shaders from .shader file
+static ShaderProgramSource ShaderSource(const string& filepath) {
+    ifstream stream(filepath);
+
+    // create an enum to store index
+    enum ShaderType {
+        NONE=-1, VERTEX=0, FRAGMENT=1
+    };
+
+    string line;
+    ShaderType type = ShaderType::NONE;
+    stringstream ss[2];
+
+    while (getline(stream, line)) {
+        if (line.find("#shader") != string::npos) {
+            if (line.find("vertex") != string::npos) {
+                type = ShaderType::VERTEX;
+            }
+            else if (line.find("fragment") != string::npos) {
+                type = ShaderType::FRAGMENT;
+            }
+        }
+        else {
+            ss[int(type)] << line << "\n";
+        }
+    }
+    return { ss[0].str(), ss[1].str() };
+}
 
 // compile shader
 static unsigned int compileShader(unsigned int type, const string& source) {
@@ -73,7 +111,6 @@ int main(void)
     if (glewInit() != GLEW_OK) {
         cout << "Error";
     }
-    cout << glGetString(GL_VERSION);
 
     // create a buffer
     unsigned int buffer;
@@ -86,27 +123,10 @@ int main(void)
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
     // create a shader (if user specific, create funciton above) 
-    string vertexshader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location=0) in vec4 position;\n"
-        "\n"
-        "void main()\n"
-        "{\n"
-        "   gl_Position = position;\n"
-        "}\n";
 
-    string fragmentshader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location=0) out vec4 color;\n"
-        "\n"
-        "void main()\n"
-        "{\n"
-        "   color = vec4(1.0,0.0,0.0,1.0);\n"
-        "}\n";
+    ShaderProgramSource source = ShaderSource("res/shaders/Basic.shader");
 
-    unsigned int shaders = CreateShader(vertexshader, fragmentshader);
+    unsigned int shaders = CreateShader(source.VertexShaderSource,source.FragmentShaderSource);
     glUseProgram(shaders);
     // vertex shader(repeated 3 times(since triangle) fragment shader(one or each pixel)
     // create a compile shader function(with type unsigned int) that creates the shader and returns the id of the shader

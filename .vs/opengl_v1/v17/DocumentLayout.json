@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\src\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\res\\shaders\\Basic.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\res\\shaders\\Basic.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Basic.shader",
+              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\res\\shaders\\Basic.shader",
+              "RelativeDocumentMoniker": "opengl_v1\\res\\shaders\\Basic.shader",
+              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\res\\shaders\\Basic.shader",
+              "RelativeToolTip": "opengl_v1\\res\\shaders\\Basic.shader",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-11-14T16:21:48.115Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +41,7 @@
               "RelativeDocumentMoniker": "opengl_v1\\src\\window.cpp",
               "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\window.cpp",
               "RelativeToolTip": "opengl_v1\\src\\window.cpp",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAGsAAAAAAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAIwDIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-01T12:12:12.021Z",
               "EditorCaption": ""
