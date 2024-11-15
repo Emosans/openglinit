@@ -9,6 +9,24 @@
 #include <cmath>
 using namespace std;
 
+#define ASSERT(x) if(!(x)) __debugbreak();
+
+#define GLCall(x) GLClearErrors();\
+    x;\
+    ASSERT(GLLogCall())
+
+static void GLClearErrors() {
+    while (glGetError() != GL_NO_ERROR);
+}
+
+static bool GLLogCall() {
+    while (GLenum error = glGetError()) {
+        cout << error << endl;
+        return false;
+    }
+    return true;
+}
+
 // create a cirlce
 static vector<float> generatePointsForCircle(float centerX, float centerY, float radius, int numberofsegments,float offsetX,float offsetY) {
     vector<float> vertices;
@@ -141,7 +159,7 @@ int main(void)
         cout << "Error";
     }
 
-    // create a buffer
+    // create a vertex buffer
     unsigned int buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
@@ -151,6 +169,7 @@ int main(void)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
+    // create an index buffer to save memory and repeat vertices
     unsigned int ibo;
     glGenBuffers(1, &ibo);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo); // args - type of binding since triangle array contains the points of the vertices(positions)
@@ -168,7 +187,7 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);        
 
         // draw arrays
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        GLCall(glDrawElements(GL_TRIANGLES, 6, GL_INT, nullptr));
 
         glfwSwapBuffers(window);
 
