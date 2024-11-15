@@ -179,6 +179,10 @@ int main(void)
     ShaderProgramSource source = ShaderSource("res/shaders/Basic.shader");
     unsigned int shaders = CreateShader(source.VertexShaderSource,source.FragmentShaderSource);
     glUseProgram(shaders);
+
+    int location = glGetUniformLocation(shaders, "u_color");
+    ASSERT(location != -1);
+    glUniform4f(location,1.0f,0.0f,0.0f,1.0f);
     // vertex shader(repeated 3 times(since triangle) fragment shader(one or each pixel)
     // create a compile shader function(with type unsigned int) that creates the shader and returns the id of the shader
 
@@ -187,7 +191,7 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);        
 
         // draw arrays
-        GLCall(glDrawElements(GL_TRIANGLES, 6, GL_INT, nullptr));
+        GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 
         glfwSwapBuffers(window);
 
