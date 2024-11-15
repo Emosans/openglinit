@@ -124,10 +124,17 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     // create array of positions
-    float positions[6] = {
+    float positions[] = {
         -0.5f,-0.5f,
-        0.0f,0.5f,
-        0.5f,-0.5f
+        0.5f,-0.5f,
+        0.5f,0.5f,
+        -0.5f,0.5
+    };
+
+    // creating an index buffer
+    unsigned int indices[] = {
+        0,1,2,
+        2,3,0
     };
 
     if (glewInit() != GLEW_OK) {
@@ -138,10 +145,16 @@ int main(void)
     unsigned int buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
+    glBufferData(GL_ARRAY_BUFFER,  8 * sizeof(float), positions, GL_STATIC_DRAW);
     
     // create a vertex attrib pointer
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
+
+    unsigned int ibo;
+    glGenBuffers(1, &ibo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo); // args - type of binding since triangle array contains the points of the vertices(positions)
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
 
     // create a shader (if user specific, create funciton above)
     ShaderProgramSource source = ShaderSource("res/shaders/Basic.shader");
@@ -152,16 +165,10 @@ int main(void)
 
     while (!glfwWindowShouldClose(window))
     {
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        float offsetX = 0.3f * cos(time);
-        float offsetY = 0.3f * sin(time);
-
-        vector<float> circle = generatePointsForCircle(0, 0, 0.5, 50, offsetX, offsetY);
-        glBufferData(GL_ARRAY_BUFFER, circle.size() * sizeof(float), circle.data(), GL_STATIC_DRAW);
+        glClear(GL_COLOR_BUFFER_BIT);        
 
         // draw arrays
-        glDrawArrays(GL_TRIANGLE_FAN, 0, circle.size()/2);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
         glfwSwapBuffers(window);
 
