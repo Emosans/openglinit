@@ -10,14 +10,14 @@
 using namespace std;
 
 // create a cirlce
-static vector<float> generatePointsForCircle(float centerX, float centerY, float radius, int numberofsegments) {
+static vector<float> generatePointsForCircle(float centerX, float centerY, float radius, int numberofsegments,float offsetX,float offsetY) {
     vector<float> vertices;
 
     for (int i = 0; i <= numberofsegments; ++i) {
         float angle = 2.0f * 3.14f * i / numberofsegments;
 
-        float x = centerX + radius * cos(angle);
-        float y = centerY + radius * sin(angle);
+        float x = centerX + offsetX + radius * cos(angle);
+        float y = centerY + offsetY + radius * sin(angle);
 
         vertices.push_back(x);
         vertices.push_back(y);
@@ -106,7 +106,9 @@ static unsigned int CreateShader(const string& vertexshader, const string& fragm
 
 int main(void)
 {
-    vector<float> circle = generatePointsForCircle(0, 0, 0.5, 50);
+    float time = 0.0f;
+    
+    
     GLFWwindow* window;
 
     if (!glfwInit())
@@ -136,8 +138,7 @@ int main(void)
     unsigned int buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
-    glBufferData(GL_ARRAY_BUFFER, circle.size() * sizeof(float), circle.data(), GL_STATIC_DRAW);
-
+    
     // create a vertex attrib pointer
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
@@ -153,12 +154,20 @@ int main(void)
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
+        float offsetX = 0.3f * cos(time);
+        float offsetY = 0.3f * sin(time);
+
+        vector<float> circle = generatePointsForCircle(0, 0, 0.5, 50, offsetX, offsetY);
+        glBufferData(GL_ARRAY_BUFFER, circle.size() * sizeof(float), circle.data(), GL_STATIC_DRAW);
+
         // draw arrays
         glDrawArrays(GL_TRIANGLE_FAN, 0, circle.size()/2);
 
         glfwSwapBuffers(window);
 
         glfwPollEvents();
+
+        time += 0.01f;
     }
     glDeleteProgram(shaders);
     glfwTerminate();
