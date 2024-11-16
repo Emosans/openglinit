@@ -1,2 +1,8 @@
-﻿  window.cpp
+﻿  VertexBuffer.cpp
+C:\Users\shrey\OneDrive\Documents\opengl_v1\opengl_v1\src\VertexBuffer.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrey\OneDrive\Documents\opengl_v1\opengl_v1\src\VertexBuffer.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrey\OneDrive\Documents\opengl_v1\opengl_v1\src\VertexBuffer.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrey\OneDrive\Documents\opengl_v1\opengl_v1\headers\Renderer.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/VertexBuffer.cpp')
+  
   opengl_v1.vcxproj -> C:\Users\shrey\OneDrive\Documents\opengl_v1\x64\Debug\opengl_v1.exe

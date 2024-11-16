@@ -1,5 +1,8 @@
-#include "../dependencies//include/glew.h"
+#include "../dependencies/include/glew.h"
 #include "../dependencies/include/glfw3.h"
+#include "../headers/VertexBuffer.h";
+#include "../headers/IndexBuffer.h";
+#include "../headers/Renderer.h";
 
 #include <iostream>
 #include <fstream>
@@ -8,24 +11,6 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-
-#define ASSERT(x) if(!(x)) __debugbreak();
-
-#define GLCall(x) GLClearErrors();\
-    x;\
-    ASSERT(GLLogCall())
-
-static void GLClearErrors() {
-    while (glGetError() != GL_NO_ERROR);
-}
-
-static bool GLLogCall() {
-    while (GLenum error = glGetError()) {
-        cout << error << endl;
-        return false;
-    }
-    return true;
-}
 
 // create a cirlce
 static vector<float> generatePointsForCircle(float centerX, float centerY, float radius, int numberofsegments,float offsetX,float offsetY) {
@@ -160,20 +145,24 @@ int main(void)
     }
 
     // create a vertex buffer
-    unsigned int buffer;
-    glGenBuffers(1, &buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
-    glBufferData(GL_ARRAY_BUFFER,  8 * sizeof(float), positions, GL_STATIC_DRAW);
+    //unsigned int buffer;
+    //glGenBuffers(1, &buffer);
+    //glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
+    //glBufferData(GL_ARRAY_BUFFER,  8 * sizeof(float), positions, GL_STATIC_DRAW);
     
+    VertexBuffer vb(positions, 8 * sizeof(float));
+
     // create a vertex attrib pointer
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
+    IndexBuffer ib(indices, 6);
+
     // create an index buffer to save memory and repeat vertices
-    unsigned int ibo;
-    glGenBuffers(1, &ibo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo); // args - type of binding since triangle array contains the points of the vertices(positions)
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER,6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
+    //unsigned int ibo;
+    //glGenBuffers(1, &ibo);
+    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo); // args - type of binding since triangle array contains the points of the vertices(positions)
+    //glBufferData(GL_ELEMENT_ARRAY_BUFFER,6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
 
     // create a shader (if user specific, create funciton above)
     ShaderProgramSource source = ShaderSource("res/shaders/Basic.shader");
