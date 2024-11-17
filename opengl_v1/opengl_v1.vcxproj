@@ -142,7 +142,9 @@
   <ItemGroup>
     <ClInclude Include="headers\IndexBuffer.h" />
     <ClInclude Include="headers\Renderer.h" />
+    <ClInclude Include="headers\VertexArray.h" />
     <ClInclude Include="headers\VertexBuffer.h" />
+    <ClInclude Include="headers\VertexBufferLayout.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

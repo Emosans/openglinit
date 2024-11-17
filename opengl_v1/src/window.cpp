@@ -3,6 +3,8 @@
 #include "../headers/VertexBuffer.h";
 #include "../headers/IndexBuffer.h";
 #include "../headers/Renderer.h";
+#include "../headers/VertexArray.h"
+#include "../headers/VertexBufferLayout.h"
 
 #include <iostream>
 #include <fstream>
