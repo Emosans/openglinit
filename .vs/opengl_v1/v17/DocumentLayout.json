@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBufferLayout.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\headers\\VertexBufferLayout.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\VertexBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\src\\VertexBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\src\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\IndexBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\src\\IndexBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\headers\\VertexBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexArray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63A1AAF7-C2E5-4EBB-A175-A9F251353F66}|opengl_v1\\opengl_v1.vcxproj|solutionrelative:opengl_v1\\headers\\VertexArray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +30,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IndexBuffer.cpp",
+              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\IndexBuffer.cpp",
+              "RelativeDocumentMoniker": "opengl_v1\\src\\IndexBuffer.cpp",
+              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\IndexBuffer.cpp",
+              "RelativeToolTip": "opengl_v1\\src\\IndexBuffer.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-19T18:02:23.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VertexBufferLayout.h",
-              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBufferLayout.h",
-              "RelativeDocumentMoniker": "opengl_v1\\headers\\VertexBufferLayout.h",
-              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBufferLayout.h",
-              "RelativeToolTip": "opengl_v1\\headers\\VertexBufferLayout.h",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACsAAAAnAAAA",
+              "Title": "VertexBuffer.cpp",
+              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\VertexBuffer.cpp",
+              "RelativeDocumentMoniker": "opengl_v1\\src\\VertexBuffer.cpp",
+              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\VertexBuffer.cpp",
+              "RelativeToolTip": "opengl_v1\\src\\VertexBuffer.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-19T18:02:19.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VertexBuffer.h",
+              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBuffer.h",
+              "RelativeDocumentMoniker": "opengl_v1\\headers\\VertexBuffer.h",
+              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexBuffer.h",
+              "RelativeToolTip": "opengl_v1\\headers\\VertexBuffer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-17T15:45:22.14Z",
+              "WhenOpened": "2024-11-19T18:01:21.215Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +79,22 @@
               "RelativeDocumentMoniker": "opengl_v1\\src\\window.cpp",
               "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\src\\window.cpp",
               "RelativeToolTip": "opengl_v1\\src\\window.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAJsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-01T12:12:12.021Z",
+              "WhenOpened": "2024-11-19T17:59:49.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VertexArray.h",
+              "DocumentMoniker": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexArray.h",
+              "RelativeDocumentMoniker": "opengl_v1\\headers\\VertexArray.h",
+              "ToolTip": "C:\\Users\\shrey\\OneDrive\\Documents\\opengl_v1\\opengl_v1\\headers\\VertexArray.h",
+              "RelativeToolTip": "opengl_v1\\headers\\VertexArray.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-19T15:33:05.179Z",
               "EditorCaption": ""
             }
           ]

@@ -152,11 +152,15 @@ int main(void)
     //glBindBuffer(GL_ARRAY_BUFFER, buffer); // args - type of binding since triangle array contains the points of the vertices(positions)
     //glBufferData(GL_ARRAY_BUFFER,  8 * sizeof(float), positions, GL_STATIC_DRAW);
     
+    VertexArray vao;
     VertexBuffer vb(positions, 8 * sizeof(float));
+    VertexBufferLayout layout;
+    layout.Push<float>(2);
+    vao.AddBuffer(vb, layout);
 
     // create a vertex attrib pointer
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
+    /*glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);*/
 
     IndexBuffer ib(indices, 6);
 
@@ -173,16 +177,31 @@ int main(void)
 
     int location = glGetUniformLocation(shaders, "u_color");
     ASSERT(location != -1);
-    glUniform4f(location,1.0f,0.0f,0.0f,1.0f);
+    
     // vertex shader(repeated 3 times(since triangle) fragment shader(one or each pixel)
     // create a compile shader function(with type unsigned int) that creates the shader and returns the id of the shader
+
+    float r = 0.0f;
+    float increment = 0.05f;
 
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);        
-
+        glUniform4f(location, r, 0.3f, 0.8f, 1.0f);
+        vao.Bind();
+        ib.Bind();
         // draw arrays
         GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+
+        if (r > 1.0f) {
+            //r = 1.0f;
+            increment = -0.05f;
+        }
+        else if (r < 0.0f) {
+            //r = 0.0f;
+            increment = 0.05f;
+        }
+        r += increment;
 
         glfwSwapBuffers(window);
 
