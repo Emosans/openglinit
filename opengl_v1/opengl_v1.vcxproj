@@ -134,6 +134,7 @@
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
     <ClCompile Include="src\window.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="headers\IndexBuffer.h" />
     <ClInclude Include="headers\Renderer.h" />
     <ClInclude Include="headers\Shader.h" />
+    <ClInclude Include="headers\Texture.h" />
     <ClInclude Include="headers\VertexArray.h" />
     <ClInclude Include="headers\VertexBuffer.h" />
     <ClInclude Include="headers\VertexBufferLayout.h" />
